@@ -11,7 +11,10 @@ class HomeScreen extends StatelessWidget {
     // double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Demo Flutter"),
+        title: Text(
+          "Demo Flutter",
+          style: AppTexts.kAppBar.copyWith(fontSize: 20.sp(context)),
+        ),
         centerTitle: true,
       ),
       body: Padding(

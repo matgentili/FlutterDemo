@@ -27,7 +27,10 @@ class _SecondScreenState extends ConsumerState<SecondScreen> {
             size: 24.sz(context),
           ),
         ),
-        title: Text("Demo Riverpod"),
+        title: Text(
+          "Riverpod",
+          style: AppTexts.kAppBar.copyWith(fontSize: 20.sp(context)),
+        ),
       ),
       body: Center(
         child: Column(

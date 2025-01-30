@@ -49,6 +49,13 @@ class _FirstScreenState extends ConsumerState<FirstScreen> {
               ),
             ),
             ElevatedButton(
+              style: ButtonStyle(
+                padding: WidgetStateProperty.all<EdgeInsets>(
+                  EdgeInsets.symmetric(
+                      horizontal: 20.sz(context),
+                      vertical: 10.sz(context)), // Padding interno
+                ),
+              ),
               onPressed: () {
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => SecondScreen()));

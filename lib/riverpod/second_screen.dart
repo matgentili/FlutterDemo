@@ -40,6 +40,13 @@ class _SecondScreenState extends ConsumerState<SecondScreen> {
                   fontWeight: FontWeight.bold, fontSize: 24.sp(context)),
             ),
             ElevatedButton(
+                style: ButtonStyle(
+                  padding: WidgetStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(
+                        horizontal: 20.sz(context),
+                        vertical: 10.sz(context)), // Padding interno
+                  ),
+                ),
                 onPressed: () {
                   ref.read(riverpodProvider.notifier).updateModel(
                       percentuale: (percentuale + 10).clamp(0, 100));
@@ -51,6 +58,13 @@ class _SecondScreenState extends ConsumerState<SecondScreen> {
                   ),
                 )),
             ElevatedButton(
+                style: ButtonStyle(
+                  padding: WidgetStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(
+                        horizontal: 20.sz(context),
+                        vertical: 10.sz(context)), // Padding interno
+                  ),
+                ),
                 onPressed: () {
                   ref
                       .read(riverpodProvider.notifier)

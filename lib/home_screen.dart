@@ -23,6 +23,11 @@ class HomeScreen extends StatelessWidget {
             children: <Widget>[
               ElevatedButton(
                 style: ButtonStyle(
+                  padding: WidgetStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(
+                        horizontal: 20.sz(context),
+                        vertical: 10.sz(context)), // Padding interno
+                  ),
                   backgroundColor:
                       WidgetStateProperty.all<Color>(Colors.grey.shade300),
                 ),

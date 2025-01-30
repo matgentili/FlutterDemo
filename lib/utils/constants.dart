@@ -24,4 +24,12 @@ class AppTexts {
     fontStyle: FontStyle.normal,
     height: 0,
   );
+
+  static const TextStyle kCounter = TextStyle(
+    fontSize: 20,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.bold,
+    fontStyle: FontStyle.normal,
+    height: 0,
+  );
 }

@@ -1,5 +1,6 @@
 import 'package:demo/riverpod/first_screen.dart';
 import 'package:demo/riverpod/utils/responsive_extensions.dart';
+import 'package:demo/stateless_stateful/stateless_stateful_screen.dart';
 import 'package:demo/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -21,28 +22,57 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(28.0),
         child: Center(
           child: Column(
+            spacing: 10.sz(context),
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              ElevatedButton(
-                style: ButtonStyle(
-                  padding: WidgetStateProperty.all<EdgeInsets>(
-                    EdgeInsets.symmetric(
-                        horizontal: 20.sz(context),
-                        vertical: 10.sz(context)), // Padding interno
+              SizedBox(
+                width: width * 0.6,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    padding: WidgetStateProperty.all<EdgeInsets>(
+                      EdgeInsets.symmetric(
+                          horizontal: 20.sz(context),
+                          vertical: 10.sz(context)), // Padding interno
+                    ),
+                    backgroundColor:
+                        WidgetStateProperty.all<Color>(Colors.grey.shade300),
                   ),
-                  backgroundColor:
-                      WidgetStateProperty.all<Color>(Colors.grey.shade300),
-                ),
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => FirstScreen(),
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => StatelessStatefulScreen(),
+                    ),
+                  ),
+                  child: Text(
+                    "Stateless vs Stateful",
+                    style: AppTexts.kButton.copyWith(
+                      fontSize: 18.sp(context),
+                    ),
                   ),
                 ),
-                child: Text(
-                  "Demo Riverpod",
-                  style: AppTexts.kButton.copyWith(
-                    fontSize: 18.sp(context),
+              ),
+              SizedBox(
+                width: width * 0.6,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    padding: WidgetStateProperty.all<EdgeInsets>(
+                      EdgeInsets.symmetric(
+                          horizontal: 20.sz(context),
+                          vertical: 10.sz(context)), // Padding interno
+                    ),
+                    backgroundColor:
+                        WidgetStateProperty.all<Color>(Colors.grey.shade300),
+                  ),
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => FirstScreen(),
+                    ),
+                  ),
+                  child: Text(
+                    "Demo Riverpod",
+                    style: AppTexts.kButton.copyWith(
+                      fontSize: 18.sp(context),
+                    ),
                   ),
                 ),
               ),

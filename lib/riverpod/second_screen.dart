@@ -14,6 +14,7 @@ class SecondScreen extends ConsumerStatefulWidget {
 class _SecondScreenState extends ConsumerState<SecondScreen> {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     int percentuale = ref.watch(riverpodProvider).percentuale ?? 0;
     return Scaffold(
       appBar: AppBar(
@@ -42,25 +43,30 @@ class _SecondScreenState extends ConsumerState<SecondScreen> {
               style: TextStyle(
                   fontWeight: FontWeight.bold, fontSize: 24.sp(context)),
             ),
-            ElevatedButton(
-                style: ButtonStyle(
-                  padding: WidgetStateProperty.all<EdgeInsets>(
-                    EdgeInsets.symmetric(
-                        horizontal: 20.sz(context),
-                        vertical: 10.sz(context)), // Padding interno
+            SizedBox(
+              width: width * 0.3,
+              child: ElevatedButton(
+                  style: ButtonStyle(
+                    padding: WidgetStateProperty.all<EdgeInsets>(
+                      EdgeInsets.symmetric(
+                          horizontal: 20.sz(context),
+                          vertical: 10.sz(context)), // Padding interno
+                    ),
                   ),
-                ),
-                onPressed: () {
-                  ref.read(riverpodProvider.notifier).updateModel(
-                      percentuale: (percentuale + 10).clamp(0, 100));
-                },
-                child: Text(
-                  "Add + 10",
-                  style: AppTexts.kButton.copyWith(
-                    fontSize: 18.sp(context),
-                  ),
-                )),
-            ElevatedButton(
+                  onPressed: () {
+                    ref.read(riverpodProvider.notifier).updateModel(
+                        percentuale: (percentuale + 10).clamp(0, 100));
+                  },
+                  child: Text(
+                    "Add + 10",
+                    style: AppTexts.kButton.copyWith(
+                      fontSize: 18.sp(context),
+                    ),
+                  )),
+            ),
+            SizedBox(
+              width: width * 0.3,
+              child: ElevatedButton(
                 style: ButtonStyle(
                   padding: WidgetStateProperty.all<EdgeInsets>(
                     EdgeInsets.symmetric(
@@ -78,7 +84,9 @@ class _SecondScreenState extends ConsumerState<SecondScreen> {
                   style: AppTexts.kButton.copyWith(
                     fontSize: 18.sp(context),
                   ),
-                )),
+                ),
+              ),
+            ),
           ],
         ),
       ),

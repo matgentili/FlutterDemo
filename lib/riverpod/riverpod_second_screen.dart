@@ -4,14 +4,15 @@ import 'package:demo/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SecondScreen extends ConsumerStatefulWidget {
-  const SecondScreen({super.key});
+class RiverpodSecondScreen extends ConsumerStatefulWidget {
+  const RiverpodSecondScreen({super.key});
 
   @override
-  ConsumerState<SecondScreen> createState() => _SecondScreenState();
+  ConsumerState<RiverpodSecondScreen> createState() =>
+      _RiverpodSecondScreenState();
 }
 
-class _SecondScreenState extends ConsumerState<SecondScreen> {
+class _RiverpodSecondScreenState extends ConsumerState<RiverpodSecondScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;

@@ -1,13 +1,13 @@
 import 'package:demo/riverpod/components/progress_percentuale_widget.dart';
 import 'package:demo/riverpod/provider/riverpod_provider.dart';
-import 'package:demo/riverpod/second_screen.dart';
+import 'package:demo/riverpod/riverpod_second_screen.dart';
 import 'package:demo/riverpod/utils/responsive_extensions.dart';
 import 'package:demo/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class FirstScreen extends ConsumerWidget {
-  const FirstScreen({super.key});
+class RiverpodFirstScreen extends ConsumerWidget {
+  const RiverpodFirstScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -55,7 +55,8 @@ class FirstScreen extends ConsumerWidget {
               ),
               onPressed: () {
                 Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => SecondScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => RiverpodSecondScreen()),
                 );
               },
               child: Text(

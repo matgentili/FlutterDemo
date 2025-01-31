@@ -35,9 +35,7 @@ class HomeScreen extends StatelessWidget {
                 contentPadding: EdgeInsets.symmetric(vertical: 10),
                 title: Text(
                   screen['type'],
-                  style: AppTexts.kButton.copyWith(
-                    fontSize: 20.sp(context),
-                  ),
+                  style: AppTexts.kButton,
                 ),
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(

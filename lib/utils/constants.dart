@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class AppTexts {
   static const TextStyle kButton = TextStyle(
-    fontSize: 18,
+    fontSize: 20,
     fontFamily: 'Montserrat',
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.bold,
     fontStyle: FontStyle.normal,
     height: 0,
   );

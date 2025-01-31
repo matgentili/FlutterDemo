@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                 title: Text(
                   screen['type'],
                   style: AppTexts.kButton.copyWith(
-                    fontSize: 18.sp(context),
+                    fontSize: 20.sp(context),
                   ),
                 ),
                 onTap: () => Navigator.of(context).push(

@@ -14,6 +14,7 @@ class SecondScreen extends ConsumerStatefulWidget {
 class _SecondScreenState extends ConsumerState<SecondScreen> {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     int percentuale = ref.watch(riverpodProvider).percentuale ?? 0;
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +28,10 @@ class _SecondScreenState extends ConsumerState<SecondScreen> {
             size: 24.sz(context),
           ),
         ),
-        title: Text("Demo Riverpod"),
+        title: Text(
+          "Riverpod",
+          style: AppTexts.kAppBar.copyWith(fontSize: 20.sp(context)),
+        ),
       ),
       body: Center(
         child: Column(
@@ -39,18 +43,37 @@ class _SecondScreenState extends ConsumerState<SecondScreen> {
               style: TextStyle(
                   fontWeight: FontWeight.bold, fontSize: 24.sp(context)),
             ),
-            ElevatedButton(
-                onPressed: () {
-                  ref.read(riverpodProvider.notifier).updateModel(
-                      percentuale: (percentuale + 10).clamp(0, 100));
-                },
-                child: Text(
-                  "Add + 10",
-                  style: AppTexts.kButton.copyWith(
-                    fontSize: 18.sp(context),
+            SizedBox(
+              width: width * 0.3,
+              child: ElevatedButton(
+                  style: ButtonStyle(
+                    padding: WidgetStateProperty.all<EdgeInsets>(
+                      EdgeInsets.symmetric(
+                          horizontal: 20.sz(context),
+                          vertical: 10.sz(context)), // Padding interno
+                    ),
                   ),
-                )),
-            ElevatedButton(
+                  onPressed: () {
+                    ref.read(riverpodProvider.notifier).updateModel(
+                        percentuale: (percentuale + 10).clamp(0, 100));
+                  },
+                  child: Text(
+                    "Add + 10",
+                    style: AppTexts.kButton.copyWith(
+                      fontSize: 18.sp(context),
+                    ),
+                  )),
+            ),
+            SizedBox(
+              width: width * 0.3,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  padding: WidgetStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(
+                        horizontal: 20.sz(context),
+                        vertical: 10.sz(context)), // Padding interno
+                  ),
+                ),
                 onPressed: () {
                   ref
                       .read(riverpodProvider.notifier)
@@ -61,7 +84,9 @@ class _SecondScreenState extends ConsumerState<SecondScreen> {
                   style: AppTexts.kButton.copyWith(
                     fontSize: 18.sp(context),
                   ),
-                )),
+                ),
+              ),
+            ),
           ],
         ),
       ),

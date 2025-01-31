@@ -6,30 +6,27 @@ import 'package:demo/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class FirstScreen extends ConsumerStatefulWidget {
+class FirstScreen extends ConsumerWidget {
   const FirstScreen({super.key});
 
   @override
-  ConsumerState<FirstScreen> createState() => _FirstScreenState();
-}
-
-class _FirstScreenState extends ConsumerState<FirstScreen> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     int percentuale = ref.watch(riverpodProvider).percentuale ?? 0;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
           icon: Icon(
             Icons.arrow_back,
             color: Colors.black,
             size: 24.sz(context),
           ),
         ),
-        title: Text("Demo Riverpod"),
+        title: Text(
+          "Riverpod",
+          style: AppTexts.kAppBar.copyWith(fontSize: 20.sp(context)),
+        ),
         centerTitle: true,
       ),
       body: Center(
@@ -49,9 +46,17 @@ class _FirstScreenState extends ConsumerState<FirstScreen> {
               ),
             ),
             ElevatedButton(
+              style: ButtonStyle(
+                padding: WidgetStateProperty.all<EdgeInsets>(
+                  EdgeInsets.symmetric(
+                      horizontal: 20.sz(context),
+                      vertical: 10.sz(context)), // Padding interno
+                ),
+              ),
               onPressed: () {
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => SecondScreen()));
+                  MaterialPageRoute(builder: (context) => SecondScreen()),
+                );
               },
               child: Text(
                 "Second screen",

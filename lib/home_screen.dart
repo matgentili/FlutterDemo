@@ -1,5 +1,7 @@
+import 'package:demo/buttons/buttons_screen.dart';
 import 'package:demo/riverpod/first_screen.dart';
 import 'package:demo/riverpod/utils/responsive_extensions.dart';
+import 'package:demo/text/texts_screen.dart';
 import 'package:demo/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +10,15 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // double width = MediaQuery.of(context).size.width;
+    // Lista degli schermi con nome e relativo widget
+    final List<Map<String, dynamic>> screens = [
+      {'type': 'Buttons', 'screen': ButtonsScreen()},
+      {'type': 'Texts', 'screen': TextsScreen()},
+      {'type': 'Riverpod', 'screen': FirstScreen()},
+    ];
+
+    // Togliere YangBus
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Demo Flutter"),
@@ -17,28 +27,25 @@ class HomeScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(28.0),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor:
-                      WidgetStateProperty.all<Color>(Colors.grey.shade300),
-                ),
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => FirstScreen(),
-                  ),
-                ),
-                child: Text(
-                  "Demo Riverpod",
+          child: ListView.builder(
+            itemCount: screens.length,
+            itemBuilder: (context, index) {
+              final screen = screens[index];
+              return ListTile(
+                contentPadding: EdgeInsets.symmetric(vertical: 10),
+                title: Text(
+                  screen['type'],
                   style: AppTexts.kButton.copyWith(
                     fontSize: 18.sp(context),
                   ),
                 ),
-              ),
-            ],
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => screen['screen'],
+                  ),
+                ),
+              );
+            },
           ),
         ),
       ),

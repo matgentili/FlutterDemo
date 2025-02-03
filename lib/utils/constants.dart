@@ -12,7 +12,7 @@ class AppTexts {
   static const TextStyle kPercentuale = TextStyle(
     fontSize: 20,
     fontFamily: 'Montserrat',
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.bold,
     fontStyle: FontStyle.normal,
     height: 0,
   );

@@ -1,6 +1,5 @@
 import 'package:demo/buttons/buttons_screen.dart';
 import 'package:demo/riverpod/riverpod_first_screen.dart';
-import 'package:demo/riverpod/utils/responsive_extensions.dart';
 import 'package:demo/stateless_stateful/stateless_stateful_screen.dart';
 import 'package:demo/text/texts_screen.dart';
 import 'package:demo/utils/constants.dart';

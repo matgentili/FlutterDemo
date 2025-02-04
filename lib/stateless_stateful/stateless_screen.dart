@@ -15,7 +15,8 @@ class StatelessScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Text(
           "Stateless",
-          style: AppTexts.kAppBar.copyWith(fontSize: 20.sp(context)),
+          style: AppTexts.kAppBar.copyWith(
+              fontSize: 20.sp(context), fontWeight: FontWeight.normal),
         ),
         centerTitle: true,
       ),

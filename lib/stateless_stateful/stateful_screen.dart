@@ -21,7 +21,8 @@ class _StatefulScreenState extends State<StatefulScreen> {
         automaticallyImplyLeading: false,
         title: Text(
           "Stateful",
-          style: AppTexts.kAppBar.copyWith(fontSize: 20.sp(context)),
+          style: AppTexts.kAppBar.copyWith(
+              fontSize: 20.sp(context), fontWeight: FontWeight.normal),
         ),
         centerTitle: true,
       ),

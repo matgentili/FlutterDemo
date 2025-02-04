@@ -19,16 +19,6 @@ class _RiverpodSecondScreenState extends ConsumerState<RiverpodSecondScreen> {
     int percentuale = ref.watch(riverpodProvider).percentuale ?? 0;
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-            size: 24.sz(context),
-          ),
-        ),
         title: Text(
           "Riverpod",
           style: AppTexts.kAppBar.copyWith(fontSize: 20.sp(context)),
@@ -40,7 +30,7 @@ class _RiverpodSecondScreenState extends ConsumerState<RiverpodSecondScreen> {
           spacing: 10.sz(context),
           children: [
             Text(
-              "Percentuale: $percentuale",
+              "Percentuale: $percentuale%",
               style: TextStyle(
                   fontWeight: FontWeight.bold, fontSize: 24.sp(context)),
             ),

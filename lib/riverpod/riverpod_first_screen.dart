@@ -15,17 +15,10 @@ class RiverpodFirstScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Navigator.pop(context),
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-            size: 24.sz(context),
-          ),
-        ),
         title: Text(
           "Riverpod",
-          style: AppTexts.kAppBar.copyWith(fontSize: 20.sp(context)),
+          style: AppTexts.kAppBar
+              .copyWith(fontSize: 20.sp(context), fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),

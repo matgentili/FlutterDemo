@@ -11,14 +11,6 @@ class StatelessStatefulScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Navigator.pop(context),
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-            size: 24.sz(context),
-          ),
-        ),
         title: Text(
           "Stateless vs Stateful",
           style: AppTexts.kAppBar.copyWith(fontSize: 20.sp(context)),

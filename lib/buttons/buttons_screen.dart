@@ -1,3 +1,5 @@
+import 'package:demo/riverpod/utils/responsive_extensions.dart';
+import 'package:demo/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class ButtonsScreen extends StatelessWidget {
@@ -7,7 +9,11 @@ class ButtonsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Demo Buttons'),
+        title: Text(
+          'Demo Buttons',
+          style: AppTexts.kAppBar
+              .copyWith(fontSize: 20.sp(context), fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: Center(

@@ -1,5 +1,6 @@
 import 'package:demo/buttons/buttons_screen.dart';
 import 'package:demo/riverpod/riverpod_first_screen.dart';
+import 'package:demo/riverpod/utils/responsive_extensions.dart';
 import 'package:demo/stateless_stateful/stateless_stateful_screen.dart';
 import 'package:demo/text/texts_screen.dart';
 import 'package:demo/utils/constants.dart';
@@ -20,11 +21,19 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Demo Flutter"),
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        title: Text(
+          "Demo Flutter",
+          style: AppTexts.kAppBar
+              .copyWith(fontSize: 20.sp(context), fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(28.0),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 28.0,
+        ),
         child: Center(
           child: ListView.builder(
             itemCount: screens.length,
@@ -34,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                 contentPadding: EdgeInsets.symmetric(vertical: 10),
                 title: Text(
                   screen['type'],
-                  style: AppTexts.kButton,
+                  style: AppTexts.kButton.copyWith(fontSize: 20.sp(context)),
                 ),
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
